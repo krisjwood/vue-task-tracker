@@ -3,8 +3,8 @@
     <h1>{{ title }}</h1>
     <Button
       @toggle-show-form="$emit('toggle-show-form')"
-      text="Add Task"
-      color="green"
+      :text="showAddTask ? 'Close Form' : 'Add Task'"
+      :color="showAddTask ? 'red' : 'green'"
     />
   </header>
 </template>
@@ -15,6 +15,7 @@ export default {
   name: "Header",
   props: {
     title: String,
+    showAddTask: Boolean,
   },
   components: {
     Button,
