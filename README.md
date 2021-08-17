@@ -1,24 +1,16 @@
 # vue-task-tracker
 
-## Project setup
-```
-npm install
-```
+A simple task tracker app built in Vue. Some of the features include:
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. Add task using toggle form
+2. Delete task
+3. Toggle (with double click) to set reminder
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## App deployed to Heroku
 
-### Lints and fixes files
+## Run app locally
 ```
-npm run lint
+git clone https://github.com/krisjwood/vue-task-tracker.git
+& npm install
+& npm run serve
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
