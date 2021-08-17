@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Header title="Task Tracker" />
-    <AddTask />
+    <AddTask @add-task="addTask" />
     <Tasks @delete-task="deleteTask" @toggle-task="toggleTask" :tasks="tasks" />
   </div>
 </template>
@@ -29,13 +29,15 @@ export default {
       }
     },
     toggleTask(id) {
-      console.log(id);
       this.task = this.tasks.map((task) => {
         if (task.id === id) {
           task.reminder = !task.reminder;
         }
       });
     },
+    addTask(newTask) {
+      this.tasks = [...this.tasks, newTask]
+    }
   },
   emits: ["delete-task", "toggle-task"],
   created() {

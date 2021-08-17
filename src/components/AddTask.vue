@@ -33,12 +33,26 @@ export default {
     };
   },
   methods: {
-    onSumbit(e) {
+    onSubmit(e) {
       e.preventDefault();
 
       if (!this.text) {
         alert("Please add a task");
+        return;
       }
+
+      const newTask = {
+        // Method to generate random id is not recommended for production
+        id: Math.floor(Math.random() * 100000),
+        text: this.text,
+        day: this.day,
+        reminder: this.reminder,
+      };
+
+      this.$emit("add-task", newTask);
+      this.text = "";
+      this.day = "";
+      this.reminder = false;
     },
   },
 };
