@@ -1,7 +1,9 @@
 <template>
   <div class="container">
-    <Header title="Task Tracker" />
-    <AddTask @add-task="addTask" />
+    <Header @toggle-show-form="toggleAddForm" title="Task Tracker" />
+    <div v-show="showAddTask">
+      <AddTask @add-task="addTask" />
+    </div>
     <Tasks @delete-task="deleteTask" @toggle-task="toggleTask" :tasks="tasks" />
   </div>
 </template>
@@ -20,9 +22,13 @@ export default {
   data() {
     return {
       tasks: [],
+      showAddTask: false,
     };
   },
   methods: {
+    toggleAddForm() {
+      this.showAddTask = !this.showAddTask;
+    },
     deleteTask(id) {
       if (confirm(`Are you sure you want to delete task ${id}?`)) {
         this.tasks = this.tasks.filter((task) => task.id !== id);
@@ -36,8 +42,8 @@ export default {
       });
     },
     addTask(newTask) {
-      this.tasks = [...this.tasks, newTask]
-    }
+      this.tasks = [...this.tasks, newTask];
+    },
   },
   emits: ["delete-task", "toggle-task"],
   created() {
