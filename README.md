@@ -7,11 +7,17 @@ A simple task tracker app built in Vue. Some of the features include:
 3. Toggle (with double click) to set reminder
 4. JSON server backend so tasks persist
 
-## App deployed to Heroku
-https://vue-task-tracker-2021.herokuapp.com/
-## Run app locally
+## App deployed to Netlify
+https://infallible-blackwell-695662.netlify.app/
+(...but there are a couple bugs)
+## Run app locally (recommended)
 ```
 git clone https://github.com/krisjwood/vue-task-tracker.git
 & npm i
 & npm run backend
 ```
+In a separate terminal window spin up the JSON server:
+```
+npm run backend
+```
+Website will be running on http://localhost:8080/
