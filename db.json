@@ -11,6 +11,12 @@
       "text": "Meeting with boss",
       "day": "March 6th at 1:30pm",
       "reminder": true
+    },
+    {
+      "text": "Clean Car",
+      "day": "23rd June 2022",
+      "reminder": false,
+      "id": "wzjTwYh"
     }
   ]
 }
